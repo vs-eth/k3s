@@ -1,0 +1,24 @@
+[Unit]
+Description=Lightweight Kubernetes
+Documentation=https://k3s.io
+After=network.target
+
+[Service]
+ExecStartPre=-/sbin/modprobe br_netfilter
+ExecStartPre=-/sbin/modprobe overlay
+{% if k3s_cluster_secret is not defined %}
+ExecStart=/usr/local/bin/k3s server
+{% elif k3s_master %}
+ExecStart=/usr/local/bin/k3s server --cluster-secret {{ k3s_cluster_secret }}
+{% else %}
+ExecStart=/usr/local/bin/k3s agent --server https://{{ k3s_master_ip }}:6443 --cluster-secret {{ k3s_cluster_secret }}
+{% endif %}
+KillMode=process
+Delegate=yes
+LimitNOFILE=infinity
+LimitNPROC=infinity
+LimitCORE=infinity
+TasksMax=infinity
+
+[Install]
+WantedBy=multi-user.target
