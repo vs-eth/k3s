@@ -1,5 +1,5 @@
-k3s_version: v1.28.5+k3s1
+k3s_version: v1.29.2+k3s1
 k3s_url: "https://github.com/rancher/k3s/releases/download/{{ k3s_version }}/k3s"
-k3s_checksum: "sha256: 38fadb2baf75cb516d59f7f4a40c1950fdc0dce5ebe7251aae235527b7de4083"
+k3s_checksum: "sha256: 24c0da6cac992bf135826a648db3056f2cbdec113a154bc70a6c2518cc1b361a"
 systemd_dir: /lib/systemd/system
 k3s_master: true
