@@ -15,8 +15,3 @@ multiple workers you will need to do the following:
   - `k3s_master`: Needs to be set to `false`.
   - `k3s_cluster_secret`: The same secret as before.
   - `k3s_master_ip`: The IP of the master node.
-
-
-
-
-
