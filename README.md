@@ -18,7 +18,7 @@ multiple workers you will need to do the following:
 
 
 ### Cluster Access
-Once the cluster is installed, you can find the kubeconfig file at `/etc/rancher/k3s/k3s.yaml`. To access the cluster, copy this file locally and update the `server: https://127.0.0.1:6443` line, changing the IP address to the IP address of the master node.
+Once the cluster is installed, you can find the kubeconfig file on the master node at `/etc/rancher/k3s/k3s.yaml`. To access the cluster, copy this file locally and update the `server: https://127.0.0.1:6443` line, changing the IP address to the IP address of the master node.
 
 Then you can use this file to make calls on the cluster, e.g.:
 ```
